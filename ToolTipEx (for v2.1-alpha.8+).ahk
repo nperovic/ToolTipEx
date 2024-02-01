@@ -30,6 +30,8 @@ class POINT {
  * - Doble click to close the ToolTip.
  * Otherwise, the Tooltip will follow the mouse movement.
  * @returns {Integer}
+ * @author nperovic
+ * @see https://github.com/nperovic/ToolTipEx
  */
 ToolTipEx(Text := "", TimeOut := 5, WhichToolTip?, Darkmode?, ClickMode := false)
 {
