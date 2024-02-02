@@ -2,25 +2,16 @@
 
 /**
  * Creates a Pop-up Tooltip window that follows the mouse movement.
- * @param {string} [Text]  
- * If omitted, the existing tooltip (if any) will be hidden.  
- * Otherwise, this parameter is the text to display in the tooltip.
- * @param {number} [TimeOut=5]  
- * The tooltip will be hidden after the set number of seconds.  
- * If you do not want the tooltip to be hidden automatically after a timeout, set this parameter to 0.
- * @param {interger} [WhichToolTip]  
- * Omit this parameter if you don't need multiple tooltips to appear simultaneously.  
- * Otherwise, this is a number between 1 and 20 to indicate which tooltip window to operate upon.  
- * If unspecified, that number is 1 (the first).
- * @param {interger} Darkmode  
+ * @param {string} [Text] If omitted, the existing tooltip (if any) will be hidden. Otherwise, this parameter is the text to display in the tooltip.
+ * @param {number} [TimeOut=5] The tooltip will be hidden after the set number of seconds. If you do not want the tooltip to be hidden automatically after a timeout, set this parameter to 0.
+ * @param {interger} [WhichToolTip] Omit this parameter if you don't need multiple tooltips to appear simultaneously.  
+ * Otherwise, this is a number between 1 and 20 to indicate which tooltip window to operate upon. If unspecified, that number is 1 (the first).
+ * @param {interger} Darkmode By default, this function will automatically detect whether the system has enabled dark mode.   
  * - `true` : Enable dark mode.  
  * - `false`: Disable dark mode.  
- * By default, this function will automatically detect whether the system has enabled dark mode.
- * @param {interger} [ClickMode=false]  
- * When the `ClickMode` is `true`, the following features will be enable:  
- * - Holding LButton to move the ToolTip.  
- * - Doble click to close the ToolTip.
- * Otherwise, the Tooltip will follow the mouse movement.
+ * @param {interger} [ClickMode=false] When the `ClickMode` is `true`, the following features will be enable:  
+ * - Holding LButton to move the ToolTip. (The Tooltip will not follow the mouse movement.)
+ * - Doble click to close the ToolTip. 
  * @returns {Integer}
  * @author nperovic
  * @see https://github.com/nperovic/ToolTipEx
