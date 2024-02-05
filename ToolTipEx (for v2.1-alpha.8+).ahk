@@ -41,13 +41,14 @@ ToolTipEx(Text := "", TimeOut := 5, WhichToolTip?, Darkmode?, ClickMode := false
          , WM_LBUTTONDOWN := 0x0201, WM_NCLBUTTONDOWN := 0x00A1, WM_LBUTTONDBLCLK := 0x0203
          , _              := (OnMessage(WM_LBUTTONDOWN, OnClickEvent), OnMessage(WM_LBUTTONDBLCLK, OnClickEvent))
 
-	if (ToolTip(), !Text) 
-        return 
+    if !IsSet(WhichToolTip)
+        ToolTip()
     
-    ttw := ToolTip(Text?,,, WhichToolTip?)
+    if !(ttw := ToolTip(Text?,,, WhichToolTip?))
+        return
 
     if TimeOut
-    	SetTimer(() => (WinExist(ttw) && WinClose()), -timeout * 1000)
+    	SetTimer(() => (WinExist(ttw) && WinClose(ttw)), -timeout * 1000)
 
     if (Darkmode ??= isDarkMode)
         DllCall("uxtheme\SetWindowTheme", "ptr", ttw, "ptr", StrPtr("DarkMode_Explorer"), "ptr", 0)
