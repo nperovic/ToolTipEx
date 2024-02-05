@@ -26,10 +26,11 @@ ToolTipEx(Text := "", TimeOut := 5, WhichToolTip?, Darkmode?, ClickMode := false
          , WM_LBUTTONDBLCLK := 0x0203
          , _                := (OnMessage(WM_LBUTTONDOWN, OnClickEvent), OnMessage(WM_LBUTTONDBLCLK, OnClickEvent))
 
-    if (ToolTip(), !Text)
+    if !IsSet(WhichToolTip)
+        ToolTip()
+    
+    if !(ttw := ToolTip(Text?,,, WhichToolTip?))
         return
-
-    ttw := ToolTip(Text?, , , WhichToolTip?)
 
     if timeout
         SetTimer(() => (WinExist(ttw) && WinClose()), -timeout * 1000)
