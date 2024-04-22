@@ -5,8 +5,8 @@
 4. `ClickMode`:  When `ClickMode` is enabled, you can **drag the ToolTip by holding the left button, and close it by double-clicking.**
 ## Examples
 https://github.com/nperovic/ToolTipEx/assets/122501303/1d4405f9-00a4-427e-8fd1-c98b1507c1c0
-```js
-#Requires AutoHotkey v2
+```cpp
+#requires AutoHotkey v2
 
 /* Following the mouse movement + Time-out */
 Numpad1::{
@@ -16,7 +16,7 @@ Numpad1::{
 /* Count Down */
 Numpad2:: {
     Loop 5 
-        SetTimer ToolTipEx.Bind(6-A_Index, 1), A_Index * -1000
+        SetTimer(ToolTipEx.Bind(6-A_Index, 1), A_Index * -1000)
 }
 
 /* Click mode */
